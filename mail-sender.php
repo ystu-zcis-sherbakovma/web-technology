@@ -7,13 +7,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $address = strip_tags(trim($_POST["address"]));
     $products = implode(", ", $_POST["products"]);
 
-    $to = "WI11S0N@bk.ru"; // Заменить
+    $to = "***@***"; // Заменить
     $subject = "Новый заказ";
     $email_content = "Имя: $name\n";
     $email_content .= "Email: $email\n\n";
     $email_content .= "Адрес доставки: $address\n\n";
     $email_content .= "Выбранные продукты: $products\n";
-    $headers = "From: WI11S0N@bk.ru\r\nX-Mailer: PHP/" . phpversion();
+    $headers = "From: ***@***\r\nX-Mailer: PHP/" . phpversion();
 
 	if (mail($to, $subject, $email_content, $headers)) {
         error_log("Заказ успешно отправлен: " . $email_content);
