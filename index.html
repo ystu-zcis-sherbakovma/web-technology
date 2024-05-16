@@ -108,7 +108,7 @@
 	
     <section id="order-section" class="hidden">
         <h2>Оформление заказа</h2>
-        <form id="order-form">
+        <form id="order-form" action="mail-sender.php" method="post"> <!-- Форма для последующей отправки на сервер -->
             <label for="name">Имя:</label>
             <input type="text" id="name" name="name" required><br> <!-- Параметр required служит для обработки исключений -->
 
@@ -207,8 +207,7 @@
                 popup.classList.add('hidden');
 				}, 5000);
 			
-			} else { // Если ввод корректен
-				event.preventDefault(); // Предотвращаем переход по ссылке т.к. действия выполняются на одной web-странице
+			} else { // Если ввод корректен // Предотвращаем переход по ссылке т.к. действия выполняются на одной web-странице
 				orderSection.classList.remove('visible'); 
 				orderSection.classList.add('hidden'); // Скрываем секцию "Оформление заказа"
 				finishSection.classList.remove('hidden'); 
